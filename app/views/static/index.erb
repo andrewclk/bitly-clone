@@ -20,5 +20,5 @@
 
 <% @urls.each do |url| %>
 	<p><%= url.long%></p>
-	<p><%= url.short%></p>
+	<p><%= "http://localhost:9393/#{url.short}"%></p>
 <% end %>
