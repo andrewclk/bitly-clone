@@ -1,2 +1,24 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+<% if @url %>
+	<%= @url.errors.full_messages %>
+<% end %>
+<h1>Lousy URL Shortener</h1>
+<p>Kinda lousy... But it worked somehow I guess...</p>
+
+<form action="urls" method="post">
+	Enter URL: 
+	<input type="text" name="long_url">
+	<input type="submit" value="Submit">
+	("To avoid error, just copy the link URL or make sure there is "http:" before the website")
+</form>
+
+<form action="short" method="post">
+	Enter URL:
+	<input type="text" name="short_url">
+	<input type="submit" value="Redirect">
+</form>
+
+
+<% @urls.each do |url| %>
+	<p><%= url.long%></p>
+	<p><%= url.short%></p>
+<% end %>
